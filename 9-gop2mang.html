@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gộp mảng</title>
+</head>
+<body>
+    <h1>Gộp mảng</h1>
+    <button type="button" onclick="inputnumber1();">Nhập 10 phần tử mảng a</button>
+    <button type="button" onclick="inputnumber2();">Nhập 10 phần tử mảng b</button>
+    <button type="button" onclick="gop();">Gộp</button>
+    <p id="arr1"></p>
+    <p id="arr2"></p>
+    <p id="result"></p>
+    <script>
+        let arr1=[];
+        let arr2=[];
+        function inputnumber1(){
+            for(let i=0; i<10;i++){
+                let nb=parseInt(prompt('Nhập phần tử '+(i+1)));
+                arr1.push(nb);
+            }
+            document.getElementById('arr1').innerHTML='10 phần tử bạn nhập vào mảng a là: '+arr1.join('; ')
+        }
+        function inputnumber2(){
+            for(let i=0; i<10;i++){
+                let nb=parseInt(prompt('Nhập phần tử '+(i+1)));
+                arr2.push(nb);
+            }
+            document.getElementById('arr2').innerHTML='10 phần tử bạn nhập vào mảng b là: '+arr2.join('; ')
+        }
+        function gop(){
+            let result=[];
+            result=arr1.concat(arr2);
+            document.getElementById('result').innerHTML='10 phần sắp xếp giảm dần là: '+result.join('; ')
+        }
+    </script>
+    <p></p>
+</body>
+</html>

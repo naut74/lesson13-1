@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung bình cộng của mảng</title>
+</head>
+<body>
+    <h1>Trung bình cộng của mảng</h1>
+    <button type="button" onclick="inputnumber();">Nhập 10 phần tử</button>
+    <p id="arr"></p>
+    <p id="position"></p>
+    <p id="result"></p>
+    <p id="average"></p>
+    <script>
+        function inputnumber(){
+            let result=[];
+            let max;
+            let average;
+            let sum=0;
+            for(let i=0; i<10;i++){
+                let nb=parseInt(prompt('Nhập phần tử '+(i+1)));
+                result.push(nb);
+                if(i===0 || nb> max){
+                    max=nb;
+                    maxi=i;
+                }
+                sum+=nb;
+            }
+            average=sum/result.length;
+            document.getElementById('arr').innerHTML='10 phần tử bạn nhập là '+result.join('; ')
+            document.getElementById('position').innerHTML='Vị trí số lớn nhất là:'+(maxi+1);
+            document.getElementById('result').innerHTML='Số lớn nhất là: '+max;
+            document.getElementById('result').innerHTML='Trung bình cộng của 10 số là: '+average;
+        }
+    </script>
+    <p></p>
+</body>
+</html>

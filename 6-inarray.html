@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V is in array</title>
+</head>
+<body>
+    <h1>V is in array</h1>
+    <button type="button" onclick="inputnumber();">Nhập 10 phần tử</button>
+    <button type="button" onclick="checkin();">Nhập và kiểm tra V</button>
+    <p id="arr"></p>
+    <p id="result"></p>
+    <script>
+        let arr=[];
+        function inputnumber(){
+            let result;
+            for(let i=0; i<10;i++){
+                let nb=parseInt(prompt('Nhập phần tử '+(i+1)));
+                arr.push(nb);
+            }            
+            document.getElementById('arr').innerHTML='10 phần tử bạn nhập là '+arr.join('; ')
+        }
+        function checkin(){
+            let nbV=parseInt(prompt('Nhập số nguyên V'));
+            // arr.includes(nbV) hàm dùng để kiểm tra nbV có trong mảng hay không
+            if(arr.includes(nbV)){
+                result='V có trong mảng'; 
+            }
+            else{
+                result='V không có trong mảng'; 
+            }
+            document.getElementById('result').innerHTML=result;
+        }
+        </script>
+    <p></p>
+</body>
+</html>
